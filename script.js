@@ -13,7 +13,7 @@ let minPosition = (minutes * 360 / 60) + (seconds * (360 / 60) / 60);
 let secPosition = seconds * 360 /  60;
 
 
-setInterval(function runClock() {
+function runClock() {
   hrPosition += (3/360);
   minPosition += (6/60);
   secPosition += 6;
@@ -21,4 +21,7 @@ setInterval(function runClock() {
   HOURHAND.style.transform = "rotate(" + hrPosition + "deg)";
   MINUTEHAND.style.transform = "rotate(" + minPosition + "deg)";
   SECONDHAND.style.transform = "rotate(" + secPosition + "deg)";
-}, 1000)();
+}
+
+
+var interval = setInterval(runClock, 1000)
